@@ -1,22 +1,8 @@
-/*
- * @Author: Mei Zhang micpearl@163.com
- * @Date: 2023-02-06 00:16:21
- * @LastEditors: Mei Zhang micpearl@163.com
- * @LastEditTime: 2023-02-06 01:10:04
- * @FilePath: \WebScrape\app.js
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
-/*
- * @Author: Mei Zhang micpearl@163.com
- * @Date: 2023-01-31 10:44:18
- * @LastEditors: Mei Zhang micpearl@163.com
- * @LastEditTime: 2023-02-06 01:06:13
- */
 const https = require('https');
 const JSSoup = require('jssoup').default;
 const fs = require('fs');
 
-const url = "https://en.wikipedia.org/wiki/Government_by_algorithm"; // FIRST: find a url of a page you are interested in from wikipedia 
+const url = "https://www.owleyes.org/text/dantes-inferno/read/canto-1"; // FIRST: find a url of a page you are interested in from wikipedia 
 const jsonPath = "./json/";
 const name = "";
 
@@ -33,16 +19,16 @@ function getParagraphText(soupTag) {
     let text = [];
     for (let i = 0; i < paragraphs.length; i++) {
         //scrape all the text from the webpage
-        //text += paragraphs[i].getText();
+        text += paragraphs[i].getText();
 
 
         //Search each paragraph for the keyword you want to retrieve
-        let p = paragraphs[i].getText().toLowerCase();
+        // let p = paragraphs[i].getText().toLowerCase();
 
-        if (p.indexOf("blockchain") != -1) {
-             console.log(p);
-            text.push(p);
-        }
+        //if (p.indexOf("blockchain") != -1) {
+        //     console.log(p);
+        //    text.push(p);
+        //}
         
     }
 
